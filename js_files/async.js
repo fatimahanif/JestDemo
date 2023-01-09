@@ -1,4 +1,12 @@
 // babel configuration required
-// const fetch = require("node-fetch")
+const axios = require("axios");
 
-exports.comment = () => {};
+exports.user = async () => {
+  let res;
+  try {
+    res = await axios.get("https://jsonplaceholder.typicode.com/users/1");
+    return res;
+  } catch (error) {
+    return error;
+  }
+};
